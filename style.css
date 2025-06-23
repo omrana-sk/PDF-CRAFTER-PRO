@@ -1,0 +1,441 @@
+/* Basic Reset & Body Style */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 600px; /* Adjust as needed for typical phone width */
+    margin: 0 auto;
+    background-color: #242424; /* Slightly lighter dark shade */
+    min-height: 100vh;
+    position: relative; /* Needed for absolute positioning inside */
+    overflow-x: hidden; /* Prevent horizontal scroll from sidebar */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #242424; /* Same as container or slightly different */
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-icon {
+    color: #ffd700; /* Gold color for crown */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+header h1 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 15px;
+    margin: 0px 20px 20px 20px; /* Top margin adjusted */
+    border-radius: 25px;
+}
+
+.search-icon {
+    margin-right: 10px;
+    color: #aaa;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1em;
+    outline: none;
+}
+.search-bar input::placeholder {
+    color: #aaa;
+}
+
+
+/* Main Content */
+main {
+    padding: 0 20px 20px 20px; /* Add padding */
+}
+
+.content-section {
+    margin-bottom: 30px;
+}
+
+.content-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    gap: 15px;
+}
+
+.grid-container.two-columns {
+     grid-template-columns: repeat(2, 1fr); /* Default 2 columns */
+}
+
+/* Cards */
+.card {
+    background-color: #333;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    /* flex-direction: column; */ /* Changed for side-by-side icon/text */
+    align-items: center;
+    /* text-align: center; */ /* Changed for side-by-side */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.card:hover {
+    background-color: #444;
+}
+
+.card-icon {
+    width: 40px; /* Fixed width for icon */
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9em; /* Adjusted font size */
+    color: #fff;
+    margin-right: 12px; /* Space between icon and text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.card-icon i {
+    font-size: 1.5em; /* Icon size */
+}
+
+.card-text {
+    flex-grow: 1; /* Allow text to take remaining space */
+}
+
+
+.card-title {
+    font-size: 0.95em;
+    font-weight: 500;
+    margin-bottom: 2px;
+     color: #e0e0e0;
+}
+
+.card-count {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* Specific Card Colors (Examples) */
+.cat-all .card-icon { background-color: #0d6efd; }
+.cat-pdf .card-icon { background-color: #dc3545; }
+.cat-doc .card-icon { background-color: #0d6efd; } /* Same as all */
+.cat-xls .card-icon { background-color: #198754; }
+.cat-ppt .card-icon { background-color: #ff7f0e; } /* Orange */
+.cat-txt .card-icon { background-color: #6c757d; } /* Grey */
+.cat-archive .card-icon { background-color: #6c757d; }
+
+.place-folder .card-icon { background-color: #ffc107; } /* Yellow */
+.place-recent .card-icon { background-color: #6f42c1; } /* Purple */
+.place-favourites .card-icon { background-color: #6f42c1; } /* Purple */
+.place-creation .card-icon { background-color: #fd7e14; } /* Orange */
+
+.pdf-op .card-icon, .tool .card-icon {
+    width: auto; /* Let icon size define width */
+    height: auto;
+    background-color: transparent; /* No background for these icons */
+    color: #88aaff; /* Light blue icon color */
+    margin-right: 10px;
+    font-size: 1.2em; /* Smaller icons */
+    font-weight: normal;
+}
+.pdf-op .card-title, .tool .card-title {
+    font-size: 0.9em;
+    margin-bottom: 0;
+    color: #e0e0e0;
+}
+.pdf-op, .tool {
+    /* Adjust padding if needed */
+    padding: 12px 15px;
+     align-items: center; /* Vertically center icon and text */
+}
+
+.pdf-op .card-icon i, .tool .card-icon i {
+    font-size: 1.3em;
+    margin: 0 2px; /* Spacing for combined icons */
+}
+.pdf-op .card-icon i.fa-arrow-down {
+    font-size: 0.8em; /* Smaller down arrow */
+    vertical-align: middle;
+}
+
+
+/* File Manager */
+.storage-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.storage-item {
+    background-color: #333;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.storage-item:hover {
+    background-color: #444;
+}
+
+.storage-icon-wrapper {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storage-icon {
+    font-size: 1.8em;
+    color: #ccc;
+    position: absolute; /* Center icon inside the ring */
+    z-index: 1;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg); /* Start circle from top */
+    z-index: 0;
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.35s;
+    transform-origin: 50% 50%;
+}
+.progress-ring__circle-bg {
+    /* Background circle color */
+}
+
+
+.storage-details {
+    flex-grow: 1;
+}
+
+.storage-name {
+    font-weight: 500;
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+.storage-space {
+    font-size: 0.85em;
+    color: #aaa;
+}
+
+.arrow-icon {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px; /* Sidebar width */
+    height: 100%;
+    background-color: #2f2f2f; /* Slightly different dark */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transform: translateX(100%); /* Initially hidden */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    color: #e0e0e0;
+}
+
+.sidebar.active {
+    transform: translateX(0); /* Slide in */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar-header h2 {
+    font-size: 1.3em;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.settings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+}
+.settings-item:last-child {
+    border-bottom: none;
+}
+.settings-item:hover {
+    background-color: #3a3a3a;
+}
+
+.setting-icon {
+    width: 30px; /* Icon container width */
+    text-align: center;
+    margin-right: 15px;
+    color: #aaa;
+    font-size: 1.2em;
+}
+
+.setting-text {
+    flex-grow: 1; /* Takes available space */
+    font-size: 0.95em;
+}
+
+.setting-value {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Simple Toggle Switch CSS */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px; /* Smaller switch */
+  height: 24px;
+  margin-left: 10px; /* Space before switch */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555; /* Off state */
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; /* Smaller knob */
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50; /* On state */
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px); /* Move knob */
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Overlay for dimming background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Below sidebar, above content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Media Query for wider screens if needed */
+@media (min-width: 768px) {
+    .grid-container.two-columns {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+    }
+    .app-container {
+        max-width: 800px;
+    }
+}
