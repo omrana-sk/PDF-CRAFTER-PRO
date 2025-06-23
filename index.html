@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+             <div class="header-title">
+                 <i class="fas fa-crown header-icon"></i>
+                 <h1>Document Viewer</h1>
+             </div>
+             <div class="header-actions">
+                  <button class="settings-btn" id="settingsBtn">
+                     <i class="fas fa-cog"></i>
+                  </button>
+             </div>
+        </header>
+        <div class="search-bar">
+              <i class="fas fa-search search-icon"></i>
+              <input type="text" placeholder="Search">
+        </div>
+
+
+        <!-- Main Content -->
+        <main>
+            <!-- Categories Section -->
+            <section class="content-section">
+                <h2>Categories</h2>
+                <div class="grid-container two-columns">
+                    <div class="card cat-all">
+                        <div class="card-icon">ALL</div>
+                        <div class="card-text">
+                            <p class="card-title">All files</p>
+                            <p class="card-count" id="count-all">... files</p>
+                        </div>
+                    </div>
+                    <div class="card cat-pdf">
+                        <div class="card-icon">PDF</div>
+                        <div class="card-text">
+                            <p class="card-title">PDF files</p>
+                            <p class="card-count" id="count-pdf">... files</p>
+                        </div>
+                    </div>
+                    <div class="card cat-doc">
+                        <div class="card-icon">DOC</div>
+                         <div class="card-text">
+                            <p class="card-title">Word files</p>
+                            <p class="card-count" id="count-doc">... files</p>
+                        </div>
+                    </div>
+                    <div class="card cat-xls">
+                        <div class="card-icon">XLS</div>
+                         <div class="card-text">
+                            <p class="card-title">Excel files</p>
+                            <p class="card-count" id="count-xls">... files</p>
+                        </div>
+                    </div>
+                    <div class="card cat-ppt">
+                        <div class="card-icon">PPT</div>
+                         <div class="card-text">
+                            <p class="card-title">PPT files</p>
+                            <p class="card-count" id="count-ppt">... files</p>
+                        </div>
+                    </div>
+                    <div class="card cat-txt">
+                        <div class="card-icon">TXT</div>
+                         <div class="card-text">
+                            <p class="card-title">TXT files</p>
+                            <p class="card-count" id="count-txt">... files</p>
+                        </div>
+                    </div>
+                     <div class="card cat-archive">
+                        <div class="card-icon"><i class="fas fa-file-archive"></i></div>
+                         <div class="card-text">
+                            <p class="card-title">Archive files</p>
+                            <p class="card-count" id="count-archive">... files</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Places Section -->
+            <section class="content-section">
+                <h2>Places</h2>
+                 <div class="grid-container two-columns">
+                     <div class="card place-folder">
+                        <div class="card-icon"><i class="fas fa-folder"></i></div>
+                        <div class="card-text">
+                            <p class="card-title">Folder files</p>
+                            <!-- Optional: count folders if needed -->
+                        </div>
+                    </div>
+                     <div class="card place-recent">
+                        <div class="card-icon"><i class="fas fa-clock"></i></div>
+                        <div class="card-text">
+                            <p class="card-title">Recent files</p>
+                             <!-- Data for recents needs specific logic -->
+                        </div>
+                    </div>
+                     <div class="card place-favourites">
+                        <div class="card-icon"><i class="fas fa-star"></i></div>
+                        <div class="card-text">
+                            <p class="card-title">Favourites</p>
+                             <!-- Data for favourites needs specific logic -->
+                        </div>
+                    </div>
+                     <div class="card place-creation">
+                        <div class="card-icon"><i class="fas fa-pencil-alt"></i></div>
+                        <div class="card-text">
+                            <p class="card-title">My Creation</p>
+                             <!-- Data for creations needs specific logic -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PDF Operation Section (Remains mostly static) -->
+             <section class="content-section">
+                <h2>PDF Operation</h2>
+                 <div class="grid-container two-columns">
+                     <div class="card pdf-op">
+                        <div class="card-icon"><i class="fas fa-file-image"></i>+</div>
+                        <p class="card-title">Images to PDF</p>
+                    </div>
+                     <div class="card pdf-op">
+                        <div class="card-icon"><i class="fas fa-file-alt"></i>+</div>
+                         <p class="card-title">Text to PDF</p>
+                    </div>
+                     <div class="card pdf-op">
+                         <div class="card-icon"><i class="fas fa-image"></i></div>
+                         <p class="card-title">PDF to Image</p>
+                    </div>
+                     <div class="card pdf-op">
+                         <div class="card-icon"><i class="fas fa-lock"></i>+</div>
+                         <p class="card-title">Add PDF Password</p>
+                    </div>
+                     <div class="card pdf-op">
+                        <div class="card-icon"><i class="fas fa-lock-open"></i></div>
+                         <p class="card-title">Remove PDF Password</p>
+                    </div>
+                     <div class="card pdf-op">
+                         <div class="card-icon"><i class="fas fa-object-group"></i></div>
+                        <p class="card-title">Merge PDF</p>
+                    </div>
+                    <div class="card pdf-op">
+                        <div class="card-icon">DOC</div>
+                         <p class="card-title">Word to PDF</p>
+                    </div>
+                     <div class="card pdf-op">
+                         <div class="card-icon">PPT</div>
+                         <p class="card-title">Slide to PDF</p>
+                    </div>
+                 </div>
+            </section>
+
+            <!-- Tools Section (Remains mostly static) -->
+            <section class="content-section">
+                <h2>Tools</h2>
+                <div class="grid-container two-columns">
+                     <div class="card tool">
+                        <div class="card-icon"><i class="fas fa-file-archive"></i><i class="fas fa-arrow-down"></i></div>
+                        <p class="card-title">Make a ZIP Files</p>
+                    </div>
+                     <div class="card tool">
+                         <div class="card-icon"><i class="fas fa-expand"></i></div>
+                        <p class="card-title">Img to Txt (OCR)</p>
+                    </div>
+                     <div class="card tool">
+                         <div class="card-icon"><i class="fas fa-sticky-note"></i></div>
+                         <p class="card-title">Notepad</p>
+                    </div>
+                </div>
+            </section>
+
+             <!-- File Manager Section -->
+            <section class="content-section">
+                <div class="storage-list" id="storage-list-container">
+                    <!-- Storage items will be added here by JavaScript -->
+                     <div class="storage-item"> <!-- Example Placeholder -->
+                         <div class="storage-icon-wrapper">
+                            <i class="fas fa-sd-card storage-icon"></i>
+                            <svg class="progress-ring" width="40" height="40">
+                               <circle class="progress-ring__circle-bg" stroke="#555" stroke-width="3" fill="transparent" r="18" cx="20" cy="20"/>
+                               <circle class="progress-ring__circle" stroke="#4CAF50" stroke-width="3" fill="transparent" r="18" cx="20" cy="20" style="stroke-dasharray: 113; stroke-dashoffset: 113;"/>
+                            </svg>
+                        </div>
+                        <div class="storage-details">
+                            <p class="storage-name">Loading Storage...</p>
+                            <p class="storage-space">... GB Free</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Sidebar (Settings Panel) -->
+    <div class="sidebar" id="sidebar">
+         <!-- Sidebar content remains the same as before -->
+         <div class="sidebar-header">
+            <h2>Settings</h2>
+            <button class="close-btn" id="closeBtn">×</button>
+        </div>
+        <ul class="settings-list">
+            <li class="settings-item">
+                <div class="setting-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="setting-text">Marquee effect for file name</div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+             <li class="settings-item">
+                <div class="setting-icon"><i class="fas fa-language"></i></div>
+                <div class="setting-text">App Language</div>
+                <div class="setting-value">English</div>
+            </li>
+             <li class="settings-item">
+                <div class="setting-icon"><i class="fas fa-moon"></i></div>
+                <div class="setting-text">Theme</div>
+                <div class="setting-value">System default</div>
+            </li>
+             <li class="settings-item">
+                <div class="setting-icon"><i class="fas fa-share-alt"></i></div>
+                <div class="setting-text">Share App</div>
+                 <div class="setting-value"></div>
+            </li>
+             <li class="settings-item">
+                 <div class="setting-icon"><i class="fas fa-ellipsis-h"></i></div>
+                 <div class="setting-text">More options...</div>
+                 <div class="setting-value"></div>
+            </li>
+        </ul>
+    </div>
+     <div class="overlay" id="overlay"></div>
+
+
+    <script src="script.js"></script>
+     <!-- IMPORTANT: Add script for your Native Bridge communication here -->
+     <!-- e.g., <script src="cordova.js"></script> or similar -->
+</body>
+</html>
